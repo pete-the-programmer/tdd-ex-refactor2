@@ -1,7 +1,10 @@
-Take a very ordinary piece of code and refactor to remove identified code smells.
+## Narrowed Change
 
-### Objective
-Refactor the `add()` function into a composed function using simple refactoring operations.
+> Sometimes a little change can have a big impact.
 
-Run the tests often.  Break nothing.
+Before making the change reduce the scope of the impact by encapsulating the affected code in scaffolding.
+
+When you're finished, remove the scaffolding again.
+
+__Your Mission__: Remove the _primitive obsession_ with arrays and convert them into lists of type T.
 
