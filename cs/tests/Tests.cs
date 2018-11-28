@@ -33,10 +33,11 @@ namespace TddExRefactor2Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Cant_get_an_item_with_the_wrong_key() {
             var x = new ThePlayers(false);
             x.Add(42, "");
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => x.get(69));
+            x.get(69);
         }
 
         [TestMethod]
