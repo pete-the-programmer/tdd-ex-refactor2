@@ -8,6 +8,7 @@ namespace TddExRefactor2
         private string[] _names;
         private int _count;
         private bool _readOnly;
+        private int GROWTH = 5;
 
         public ThePlayers(bool makeReadOnly) {
             this._keys = new int[0];
@@ -27,10 +28,10 @@ namespace TddExRefactor2
                     return;
                     }
                 int newSize = _count + 1;
-                if (newSize > _keys.Length) 
+                if (newSize > this.size()) 
                 {
-                    int[] newKeys = new int[_keys.Length + 1];
-                    string[] newNames = new string[_keys.Length + 1];
+                    int[] newKeys = new int[this.size() + GROWTH];
+                    string[] newNames = new string[this.size() + GROWTH];
                     Array.Copy(_keys, newKeys, _count);
                     Array.Copy(_names, newNames, _count);
                     _keys = newKeys;
@@ -70,7 +71,7 @@ namespace TddExRefactor2
         }
 
         public int size() {
-            return this._keys.Length;
+            return _keys.Length;
         }
     }
 }
